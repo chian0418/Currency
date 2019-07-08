@@ -27,13 +27,13 @@ public class MainActivity extends AppCompatActivity {
                  String ntd  =  edNtd.getText().toString();
                 //如果是空值
                 if (ntd.isEmpty()){
-                    new AlertDialog.Builder(MainActivity.this).setTitle("Problem").setMessage("Please enter you NTD amount").setPositiveButton("OK",null).show();
+                    new AlertDialog.Builder(MainActivity.this).setTitle(getString(R.string.problem)).setMessage(getString(R.string.plese_enter_you_NTD_amount)).setPositiveButton(getString(R.string.go),null).show();
                 }else {
                     double us   =  Double.parseDouble(ntd)/exchangerate;
                     DecimalFormat df = new DecimalFormat("#.0000");
                     us=Double.parseDouble(df.format(us));
 
-                    new AlertDialog.Builder(MainActivity.this).setTitle("Result").setMessage("USD is "+us).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    new AlertDialog.Builder(MainActivity.this).setTitle(getString(R.string.result)).setMessage(getString(R.string.usd_is)+us).setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                            if (!edNtd.getText().toString().isEmpty()){
